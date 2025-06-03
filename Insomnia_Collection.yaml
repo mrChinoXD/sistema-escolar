@@ -1,0 +1,180 @@
+type: collection.insomnia.rest/5.0
+name: "Ejercicio Tecnico "
+meta:
+  id: wrk_de3d59ee14a9471cabfdfd1b3eb78685
+  created: 1748923151137
+  modified: 1748923151137
+collection:
+  - name: Alumnos
+    meta:
+      id: fld_4bd42512ebc74936afd3a085f966dd2d
+      created: 1748929555973
+      modified: 1748929555973
+      sortKey: -1748929555974
+    children:
+      - url: 127.0.0.1:8000/api/alumnos
+        name: Listar Alumnos
+        meta:
+          id: req_100106f930804b4bb920b0ba62f3338a
+          created: 1748929560646
+          modified: 1748929712495
+          isPrivate: false
+          sortKey: -1748929560646
+        method: GET
+        parameters:
+          - id: pair_87b7f5c9067240c7bff886c9413cffb5
+            name: limit
+            value: "10"
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/api/alumnos
+        name: Agregar Alumno
+        meta:
+          id: req_575326441277414abcb251b32e1c112c
+          created: 1748929767561
+          modified: 1748931505893
+          isPrivate: false
+          sortKey: -1748788012239.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nombre" : "{% faker 'randomFirstName' %}",
+            	"apellido" : "{% faker 'randomLastName' %}",
+            	"apellido_materno":"{% faker 'randomLastName' %}",
+            	"email": "oxaesdmqmw@qzueos.com",
+            	"sede_id" : 1
+            }
+        parameters:
+          - id: pair_87b7f5c9067240c7bff886c9413cffb5
+            name: limit
+            value: "10"
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/api/alumnos/UNI2025016/get
+        name: Buscar Alumno
+        meta:
+          id: req_8142e178a5f04a848543ec5b3499449a
+          created: 1748930555832
+          modified: 1748932976694
+          isPrivate: false
+          sortKey: -1748717238036.25
+        method: GET
+        parameters:
+          - id: pair_87b7f5c9067240c7bff886c9413cffb5
+            name: limit
+            value: "10"
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/api/alumnos/10
+        name: Actualizar Alumno
+        meta:
+          id: req_f12e4a929c7749f7baf8475b426655c9
+          created: 1748933019293
+          modified: 1748933770072
+          isPrivate: false
+          sortKey: -1748752625137.875
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nombre" : "{% faker 'randomFirstName' %}",
+            	"apellido" : "{% faker 'randomLastName' %}",
+            	"apellido_materno":"{% faker 'randomLastName' %}",
+            	"email": "oxaesdmqmw@qzueos.com",
+            	"sede_id" : 1
+            }
+        parameters:
+          - id: pair_87b7f5c9067240c7bff886c9413cffb5
+            name: limit
+            value: "10"
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/api/alumnos/10
+        name: Borrar Alumno
+        meta:
+          id: req_fdce98cc633b48fcb2e3fd96b01ccd75
+          created: 1748933796941
+          modified: 1748933801732
+          isPrivate: false
+          sortKey: -1748734931587.0625
+        method: DELETE
+        body:
+          mimeType: application/json
+        parameters:
+          - id: pair_87b7f5c9067240c7bff886c9413cffb5
+            name: limit
+            value: "10"
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_79bfca050450523df86e17349c000fbf1fece73b
+    created: 1748923151146
+    modified: 1748923151146
+environments:
+  name: Base Environment
+  meta:
+    id: env_79bfca050450523df86e17349c000fbf1fece73b
+    created: 1748923151143
+    modified: 1748923151143
+    isPrivate: false
