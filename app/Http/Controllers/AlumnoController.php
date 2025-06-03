@@ -46,13 +46,15 @@ class AlumnoController extends Controller
     public function obtenerAlumno(string $matricula)
     {
         try{
-            $alumno = Alumno::where('matricula','=',$matricula)->first();
 
-            $alumno->load('sede');
+            $alumno = Alumno::where('matricula','=',$matricula)->first();
 
             if(!$alumno){
                 return ApiResponse::error('Alumno no encontrado', 'Alumno no encontrado: '.$matricula, 404);
             }
+
+            $alumno->load('sede');
+
             return ApiResponse::success($alumno, 'Alumno', 201);
         }catch(\Exception $e){
             return ApiResponse::error('Error al obtener el alumno por matricula', ['exception' => $e->getMessage()], 500);
